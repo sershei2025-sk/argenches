@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Argenches</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/css/chessboard.min.css"/>
+
+<style>
+body{
+font-family:Arial;
+text-align:center;
+background:#f0f0f0;
+}
+
+#board{
+width:400px;
+margin:auto;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Argenches</h2>
+
+<div id="board"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/js/chessboard.min.js"></script>
+
+<script>
+
+var chess = new Chess()
+
+var board = Chessboard('board', {
+draggable: true,
+position: 'start',
+
+onDrop: function (source, target) {
+
+var move = chess.move({
+from: source,
+to: target,
+promotion: 'q'
+})
+
+if (move === null) return 'snapback'
+
+}
+
+})
+
+</script>
+
+</body>
+</html>
